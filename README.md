@@ -8,8 +8,9 @@ May the force be with you.
 
 ## How to play
 
-Once it is ready, you will se the manual here.
-Meanwhile don't hesitate to text me if you are interested in the project or just want to have a chat.
+Once it is ready, you will see the manual here.
+
+For the time beeing, don't hesitate to text me if you are interested in the project or just want to have a chat.
 I am always open for a great discusion.
 
 ## Disclaimer
