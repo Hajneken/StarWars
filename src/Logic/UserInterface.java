@@ -7,30 +7,18 @@ import Ships.Player;
  * @project StarWars
  */
 public class UserInterface {
+    private GameLogic game;
 
-    public UserInterface(){
+//    constructor
+    public UserInterface(GameLogic game) {
+        this.game = game;
     }
 
-    private String greetingMessage(){
-        return  "Welcome to the STAR WARS - The Last Battle adventure game! \n" +
-                "Are you ready for an adventure? \n PRESS ENTER for a new game";
-    }
-    private String intro(){
-        return "A long time ago in the galaxy far, far away..." +
-                "\n STAR WARS The Last Battle \n \n A war is raging across the galaxy." +
-                "Mighty imperial forces with it's destructive weapon, the Death Star, has dominated most of the galaxy \n"
-                + "Formerly known as the Republic.";
+    public void play(){
+        System.out.println(game);
     }
 
-    private String initUI(){
-        return " ***********************************************************/n" +
-                "* Current location: [LocationName] /n" +
-                "* Ship statistics: Ship=[NAME] HP=[HP] Fuel=[Fuel] /n" +
-                "*--------------------------------------------------------- /n" +
-                "* Death Star: HP = [30] /n" +
-                "* Tie-fighters: [Aktivní / Zničeny] /n" +
-                "***********************************************************";
-    }   
+
 
 
     //manual

@@ -3,7 +3,6 @@
  * @project ${PROJECT_NAME}
  */
 package Logic;
-
 import Locations.Location;
 
 
@@ -34,7 +33,9 @@ public class GameInit {
         currentLocation = base;
     }
 
-    public Location getCurrentLocation() {return currentLocation;}
+    public String getDescriptionOfLocation() {return currentLocation.getDescription();}
+
+    public String getNameOfCurrentLocation() {return currentLocation.getName();}
 
     public void setCurrentLocation(Location otherLocation){ currentLocation = otherLocation;}
 
