@@ -1,8 +1,9 @@
-package Locations;
+package Logic;
 
 /**
  * @author Hynek Zemanec
  * @project StarWars
  */
-public class Battle {
+public class GameLogic {
+    
 }
