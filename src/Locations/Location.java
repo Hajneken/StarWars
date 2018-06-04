@@ -1,6 +1,6 @@
 package Locations;
 
-import java.net.ProxySelector;
+import Logic.Action;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -10,33 +10,38 @@ import java.util.stream.Collectors;
  */
 
 public class Location {
-//    base
-//    battle
-//    nearAsteroidBelt
-//    asteroidBelt
-//    withinDeathStar 
 
     private String name;
     private String description;
-    private Set<Location> exits;
+    private List<Action> actionList;
+    private String actions; // jako list of actions maybe? udělat counter a pak přiřadit číslo
+    private String hint;
+    private List<Location> exits;
 
 //    constructor
 //    each Location has name and description
 //    it has a collection of exits which
-    public Location(String name, String description) {
+    public Location(String name, String description, String actions, String hint) {
         this.name = name;
         this.description = description;
-        exits = new HashSet<>();
+        this.actions = actions;
+        this.hint = hint;
+        actionList = new LinkedList<>();
+        exits = new LinkedList<>();
     }
 
-//  setter of exit of a location
+//  Adds exit to a location
     public void setExit(Location nextLocation) {
         exits.add(nextLocation);
     }
+//  Adds action to a location
+    public void addAction(Action action){ actionList.add(action);}
 
-// Location getter
-    public Collection<Location> getExits() {
-        return Collections.unmodifiableCollection(exits);
+    public List<Action> getActionList() { return actionList; }
+
+    // Location getter
+    public LinkedList<Location> getExits() {
+        return (LinkedList<Location>) exits;
     }
 
 // getter of name
@@ -55,9 +60,14 @@ public class Location {
     public void setDescription(String description) {
         this.description = description;
     }
+// getter of actions
+    public String getActions() {return actions;}
+// setter of actions
+    public void setActions(String actions) {this.actions = actions;}
 
 
-    public Location returnNeighbouringLocation(String nameOfNextLocation) {
+
+    public Location getNeighbouringLocation(String nameOfNextLocation) {
         List<Location> searchedLocations = exits.stream()
                 .filter(neighbour -> neighbour.getName().equals(nameOfNextLocation))
                 .collect(Collectors.toList());
@@ -75,11 +85,16 @@ public class Location {
         Location location = (Location) o;
         return Objects.equals(name, location.name) &&
                 Objects.equals(description, location.description) &&
+                Objects.equals(actionList, location.actionList) &&
+                Objects.equals(actions, location.actions) &&
+                Objects.equals(hint, location.hint) &&
                 Objects.equals(exits, location.exits);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, exits);
+        return Objects.hash(name, description, actionList, actions, hint, exits);
     }
+
+    public String getHint() { return hint;}
 }

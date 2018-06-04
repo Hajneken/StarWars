@@ -1,6 +1,11 @@
 package Logic;
 
-import Ships.Player;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.management.BufferPoolMXBean;
+import  java.util.Scanner;
+
 
 /**
  * @author Hynek Zemanec
@@ -9,37 +14,34 @@ import Ships.Player;
 public class UserInterface {
     private GameLogic game;
 
-//    constructor
-    public UserInterface(GameLogic game) {
-        this.game = game;
+    public UserInterface(){
+        game = new GameLogic();
     }
+
+    private void playIntro(){
+        System.out.println(game.greetingMessage());
+        readInput();
+        System.out.println(game.getIntro());
+        readInput();
+    }
+
+//    need some pregame logic that would choose the ship and name player first
 
     public void play(){
-        System.out.println(game);
+        playIntro();
+        System.out.println(game.initUI());
+//        game starts here
+        while(!game.isOver()){
+            String input = readInput();
+            System.out.println(game.processInput(input));
+        }
+        System.out.println(game.getEpilogue());
     }
 
-
-
-
-    //manual
-//    User interface will look like this:
-//    ***********************************************************
-//    * Current location: [LocationName]                        * /n
-//    * Ship statistics: Ship=[NAME] HP=[HP] Fuel=[Fuel]        * /n
-//    *---------------------------------------------------------*
-//    * Death Star: HP = [30]                                   * /n
-//    * Tie-fighters: [Aktivní / Zničeny]                       * /n
-//    ***********************************************************
-//    For your next choice, press the corresponding number:
-//        1.    [Choice]
-//        2.    [Choice]
-//        3.    [Choice]
-//        4.    [Choice]
-//        5.    Exit GameInit
-
-//
-//    System.out.println("A Long Time Ago in a Galaxy Far Far Away...");
-//    System.out.println("War rages across the republic! The mighty Imperial troops with their weapon of doom, the Death Star, are devastating the rebellion");
-
+    private String readInput(){
+        System.out.print("> ");
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
+    }
 
 }

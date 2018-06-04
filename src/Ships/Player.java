@@ -11,7 +11,14 @@ public class Player {
     private int HP;
     private int fuel;
 
-    public Player(String name, String ship, int hp, int fuel){
+    public Player() {
+        this.name = "Test";
+        this.ship = "Millenium Falcon";
+        this.HP = 10;
+        this.fuel = 10;
+    }
+
+    public Player(String name, String ship, int hp, int fuel) {
         this.name = name;
         this.ship = ship;
         this.HP = hp;
@@ -50,4 +57,14 @@ public class Player {
         this.fuel = fuel;
     }
 
+    public void changeHP(int changeValue) {
+        this.HP += changeValue;
+    }
+    public void changeFuel(int changeValue) {
+        this.fuel += changeValue;
+    }
+
+
+
 }
+
