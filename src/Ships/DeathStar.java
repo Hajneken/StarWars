@@ -26,4 +26,12 @@ public class DeathStar implements Enemy{
     public void setHP(int newHp) {
         hp = newHp;
     }
+
+        public void isReady() {
+        destroyed = true;
+    }
+
+    public boolean isDestroyed() {
+        return destroyed;
+    }
 }

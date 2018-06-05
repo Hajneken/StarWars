@@ -16,8 +16,15 @@ public class TieFighters implements Enemy{
         this.destroyed = false;
     }
 
+    public boolean getDestroyed(){ return destroyed; };
+
+    public void setDestroyed(){ destroyed = true; };
+
     @Override
     public int getHP() {
+        if (destroyed){
+            return 0;
+        }
         return hp;
     }
 

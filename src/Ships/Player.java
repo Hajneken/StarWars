@@ -10,12 +10,14 @@ public class Player {
     private String ship;
     private int HP;
     private int fuel;
+    private boolean exists;
 
     public Player() {
-        this.name = "Test";
-        this.ship = "Millenium Falcon";
-        this.HP = 10;
-        this.fuel = 10;
+        this.name = "player1";
+        this.ship = "Unavailable";
+        this.HP = 1;
+        this.fuel = 1;
+        this.exists = false;
     }
 
     public Player(String name, String ship, int hp, int fuel) {

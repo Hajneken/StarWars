@@ -26,7 +26,6 @@ public class GameInit {
                 "Choose one ship by pressing the corresponding number and confirm by pressing enter");
         Location airport = new Location("Airport",
                 "Military Airport where the rebel fleet is getting ready for the final hyperspace jump.",
-                "\n Choose your next action by entering the corresponding number:\n" +
                         "   1.Jump to the hyperspace and be the first to enter the battlefield\n" +
                         "   2.Send in the fleet first and then follow them into battle\n" +
                         "   3.Enter the battlefield together with the Rebel Fleet\n" +
@@ -36,7 +35,6 @@ public class GameInit {
                         "Note that every action has its consequence, e.g. decreasing HP or Fuel. Choose wisely.");
         Location battle = new Location("Battle",
                 "Epicentre of the battle where fighting between Rebels forces and Imperial fleet is taking place.",
-                "\n Choose your next action by entering the corresponding number:\n" +
                         "   1.Fire at the Death Star shields\n" +
                         "   2.Hold and defend the position\n" +
                         "   3.Launch offensive attack against the Death Star.\n" +
@@ -58,7 +56,6 @@ public class GameInit {
                 "It would be advisable to try your luck in the asteroid belt");
         Location asteroidBelt = new Location("Within Asteroid Belt",
                 "Spiral collection of explosive asteroids with a very little space for flying.",
-                "\n Choose your next action by entering the corresponding number:\n" +
                         "   1.Fire at Asteroids with hope of destroying Tie-Fighters\n" +
                         "   2.Use the force and move with an Asteroid\n" +
                         "   3.Manoeuvre the ship as best as you can\n" +
@@ -68,7 +65,6 @@ public class GameInit {
                         "There is a reason why Jedi skills prove useful.");
         Location withinDeathStar = new Location("Within Death Star",
                 "The heart of the Death Star where the right choice can liberate the galaxy.",
-                "\n Choose your next action by entering the corresponding number:\n" +
                         "   1.Fire at the engines\n" +
                         "   2.Fire at the laser system\n" +
                         "   3.Plant a bomb and start the countdown\n" +
@@ -118,7 +114,7 @@ public class GameInit {
         battle.addAction(new Action(3, "Launch offensive attack against the Death Star.",
                 1, -4, -2,2));
         battle.addAction(new Action(4, "Focus the attack at Tie-Fighters",
-                1, -30, -30,0));
+                3, -30, -30,0));
         battle.addAction(new Action(5, "Retreat towards nearby Asteroid Belt",
                 1, 0,-2,1));
 

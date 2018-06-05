@@ -14,7 +14,7 @@ public class Location {
     private String name;
     private String description;
     private List<Action> actionList;
-    private String actions; // jako list of actions maybe? udělat counter a pak přiřadit číslo
+    private String actions;
     private String hint;
     private List<Location> exits;
 
@@ -64,19 +64,6 @@ public class Location {
     public String getActions() {return actions;}
 // setter of actions
     public void setActions(String actions) {this.actions = actions;}
-
-
-
-    public Location getNeighbouringLocation(String nameOfNextLocation) {
-        List<Location> searchedLocations = exits.stream()
-                .filter(neighbour -> neighbour.getName().equals(nameOfNextLocation))
-                .collect(Collectors.toList());
-        if (searchedLocations.isEmpty()) {
-            return null;
-        } else {
-            return searchedLocations.get(0);
-        }
-    }
 
     @Override
     public boolean equals(Object o) {

@@ -25,6 +25,14 @@ public class UserInterface {
         readInput();
     }
 
+    private void playEnd(){
+        System.out.println(game.getCongratulationsText());
+        readInput();
+        System.out.println(game.getEpilogue());
+        readInput();
+        game.exitGame();
+    }
+
 //    need some pregame logic that would choose the ship and name player first
 
     public void play(){
@@ -35,7 +43,7 @@ public class UserInterface {
             String input = readInput();
             System.out.println(game.processInput(input));
         }
-        System.out.println(game.getEpilogue());
+        playEnd();
     }
 
     private String readInput(){
