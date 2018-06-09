@@ -62,10 +62,10 @@ public class Player {
     public void changeHP(int changeValue) {
         this.HP += changeValue;
     }
+
     public void changeFuel(int changeValue) {
         this.fuel += changeValue;
     }
-
 
 
 }

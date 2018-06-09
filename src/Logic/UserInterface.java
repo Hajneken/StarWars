@@ -1,5 +1,6 @@
 package Logic;
-import  java.util.Scanner;
+
+import java.util.Scanner;
 
 
 /**
@@ -9,31 +10,31 @@ import  java.util.Scanner;
 public class UserInterface {
     private GameLogic game;
 
-    public UserInterface(){
+    public UserInterface() {
         game = new GameLogic();
     }
 
     //    need some pregame logic that would choose the ship and name player first
 
-    public void play(){
+    public void play() {
         playIntro();
         System.out.println(game.initUI());
 //        game starts here
-        while(!game.isOver()){
+        while (!game.isOver()) {
             String input = readInput();
             System.out.println(game.processInput(input));
         }
         playEnd();
     }
 
-    private void playIntro(){
+    private void playIntro() {
         System.out.println(game.greetingMessage());
         readInput();
         System.out.println(game.getIntro());
         readInput();
     }
 
-    private void playEnd(){
+    private void playEnd() {
         System.out.println(game.getCongratulationsText());
         readInput();
         System.out.println(game.getEpilogue());
@@ -41,7 +42,7 @@ public class UserInterface {
         game.exitGame();
     }
 
-    private String readInput(){
+    public String readInput() {
         System.out.print("> ");
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();

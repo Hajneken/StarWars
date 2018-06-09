@@ -1,6 +1,7 @@
 package Locations;
 
 import Logic.Action;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -18,7 +19,7 @@ public class Location {
     private String hint;
     private List<Location> exits;
 
-//    constructor
+    //    constructor
 //    each Location has name and description
 //    it has a collection of exits which
     public Location(String name, String description, String actions, String hint) {
@@ -30,40 +31,54 @@ public class Location {
         exits = new LinkedList<>();
     }
 
-//  Adds exit to a location
+    //  Adds exit to a location
     public void setExit(Location nextLocation) {
         exits.add(nextLocation);
     }
-//  Adds action to a location
-    public void addAction(Action action){ actionList.add(action);}
 
-    public List<Action> getActionList() { return actionList; }
+    //  Adds action to a location
+    public void addAction(Action action) {
+        actionList.add(action);
+    }
+
+    public List<Action> getActionList() {
+        return actionList;
+    }
 
     // Location getter
     public LinkedList<Location> getExits() {
         return (LinkedList<Location>) exits;
     }
 
-// getter of name
+    // getter of name
     public String getName() {
         return name;
     }
-// setter of name
+
+    // setter of name
     public void setName(String name) {
         this.name = name;
     }
-// getter of description
+
+    // getter of description
     public String getDescription() {
         return description;
     }
-// setter of description
+
+    // setter of description
     public void setDescription(String description) {
         this.description = description;
     }
-// getter of actions
-    public String getActions() {return actions;}
-// setter of actions
-    public void setActions(String actions) {this.actions = actions;}
+
+    // getter of actions
+    public String getActions() {
+        return actions;
+    }
+
+    // setter of actions
+    public void setActions(String actions) {
+        this.actions = actions;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -83,5 +98,7 @@ public class Location {
         return Objects.hash(name, description, actionList, actions, hint, exits);
     }
 
-    public String getHint() { return hint;}
+    public String getHint() {
+        return hint;
+    }
 }

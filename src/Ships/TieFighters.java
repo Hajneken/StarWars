@@ -6,23 +6,27 @@ import javax.rmi.CORBA.Tie;
  * @author Hynek Zemanec
  * @project StarWars
  */
-public class TieFighters implements Enemy{
+public class TieFighters implements Enemy {
 
     private int hp;
     private boolean destroyed;
 
-    public TieFighters(){
+    public TieFighters() {
         this.hp = 5;
         this.destroyed = false;
     }
 
-    public boolean getDestroyed(){ return destroyed; };
+    public boolean getDestroyed() {
+        return destroyed;
+    }
 
-    public void setDestroyed(){ destroyed = true; };
+    public void setDestroyed() {
+        destroyed = true;
+    }
 
     @Override
     public int getHP() {
-        if (destroyed){
+        if (destroyed) {
             return 0;
         }
         return hp;
@@ -33,8 +37,8 @@ public class TieFighters implements Enemy{
         hp = newHp;
     }
 
-    public String statusInfo(){
-        if (destroyed){
+    public String statusInfo() {
+        if (destroyed) {
             return "Destroyed";
         }
         return "Actively engaged in the fight";

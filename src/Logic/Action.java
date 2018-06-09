@@ -12,7 +12,7 @@ public class Action {
     private int fuelVal;
     private int location;
 
-    public Action(int numOfCase, String description, int reaction, int hpVal, int fuelVal, int location){
+    public Action(int numOfCase, String description, int reaction, int hpVal, int fuelVal, int location) {
         this.numOfCase = numOfCase;
         this.description = description;
         this.reaction = reaction;

@@ -25,7 +25,7 @@ public class PlayerTest {
     @Test
     public void setShip() {
         player1.setShip("Different");
-        assertEquals("Different", player1.getShip() );
+        assertEquals("Different", player1.getShip());
     }
 
     @Test
