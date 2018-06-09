@@ -5,20 +5,27 @@
 package Logic;
 
 import Locations.Location;
-
-import java.util.LinkedList;
 import java.util.List;
 
+/**
+ *
+ */
 
 public class GameInit {
 
     private Location currentLocation;
 
-    //    List of Locations
+    /**
+     *List of Locations
+     *
+     */
     public GameInit() {
         initLocations();
     }
 
+    /**
+     *
+     */
     private void initLocations() {
         Location base = new Location("Base",
                 "The rebel HQ, where the fleet is preparing for the last battle. ",
@@ -151,18 +158,34 @@ public class GameInit {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public Location getCurrentLocation() {
         return currentLocation;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescriptionOfLocation() {
         return currentLocation.getDescription();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNameOfCurrentLocation() {
         return currentLocation.getName();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getActionsOfCurrentLocation() {
 //        gets all the actions for current location
         List<Action> actions = currentLocation.getActionList();
@@ -175,21 +198,37 @@ public class GameInit {
 //        return currentLocation.getActions();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getHintOfCurrentLocation() {
         return currentLocation.getHint();
     }
 
+    /**
+     *
+     * @param otherLocation
+     */
 
     public void setCurrentLocation(Location otherLocation) {
         currentLocation = otherLocation;
     }
 
+    /**
+     *
+     * @param indexOfLocation
+     */
     //    gets the exits and removes those we don't need anymore as well as the action that goes with them
     public void removeLocationFromTheList(int indexOfLocation) {
         currentLocation.getExits().remove(indexOfLocation);
 
     }
 
+    /**
+     *
+     * @param indexOfAction
+     */
     public void removeActionFromTheList(int indexOfAction) {
         currentLocation.getActionList().remove(indexOfAction);
     }

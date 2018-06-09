@@ -15,11 +15,11 @@ public class PlayerTest {
     Player player1 = new Player("TestName", "TestShip", 20, 15);
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
     }
 
     @Test

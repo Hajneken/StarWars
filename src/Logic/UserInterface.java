@@ -10,10 +10,16 @@ import java.util.Scanner;
 public class UserInterface {
     private GameLogic game;
 
+    /**
+     *
+     */
     public UserInterface() {
         game = new GameLogic();
     }
 
+    /**
+     *
+     */
     //    need some pregame logic that would choose the ship and name player first
 
     public void play() {
@@ -27,6 +33,9 @@ public class UserInterface {
         playEnd();
     }
 
+    /**
+     *
+     */
     private void playIntro() {
         System.out.println(game.greetingMessage());
         readInput();
@@ -34,6 +43,9 @@ public class UserInterface {
         readInput();
     }
 
+    /**
+     *
+     */
     private void playEnd() {
         System.out.println(game.getCongratulationsText());
         readInput();
@@ -42,6 +54,10 @@ public class UserInterface {
         game.exitGame();
     }
 
+    /**
+     *
+     * @return
+     */
     public String readInput() {
         System.out.print("> ");
         Scanner sc = new Scanner(System.in);

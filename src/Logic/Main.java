@@ -1,11 +1,10 @@
 package Logic;
 
-import Locations.Location;
-
-import javax.jws.soap.SOAPBinding;
-
 public class Main {
-
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         UserInterface ui = new UserInterface();
         ui.play();

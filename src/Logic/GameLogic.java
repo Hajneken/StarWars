@@ -12,7 +12,7 @@ import java.util.*;
 /**
  * @author Hynek Zemanec
  * @project StarWars
- * <p>
+ *
  * VERSION CHECK - DOMOV
  */
 public class GameLogic {
@@ -24,6 +24,9 @@ public class GameLogic {
     private boolean gameLost = false;
     private boolean gameWon = false;
 
+    /**
+     *
+     */
     public GameLogic() {
         player = new Player();
         gameInit = new GameInit();
@@ -31,17 +34,30 @@ public class GameLogic {
         tieFighters = new TieFighters();
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public String processInput(String input) {
         magicHappening(input);
         return initUI();
     }
 
+    /**
+     *
+     * @return
+     */
     public String greetingMessage() {
         return "Welcome to the > STAR WARS - The Last Battle  adventure game! <\n" +
                 "               ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n" +
                 " Are you ready for an adventure? \n PRESS ENTER to start a new game";
     }
 
+    /**
+     *
+     * @return
+     */
     public String getIntro() {
         return "\n\n\n\n\n\n\n\nA long time ago in the galaxy far, far away..." +
                 "\n\n\n\n\n *** STAR WARS The Last Battle *** \n" +
@@ -54,17 +70,28 @@ public class GameLogic {
                 "PRESS ENTER to continue";
     }
 
+    /**
+     *
+     * @return
+     */
     //    return true if game is over
     public boolean isOver() {
         return gameOver;
     }
 
+    /**
+     *
+     */
     // method for when player wins
     public void getGameWin() {
         gameWon = true;
         gameOver = true;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCongratulationsText() {
         clearScreen();
         return "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
@@ -75,6 +102,10 @@ public class GameLogic {
                 "\n\nContinue by pressing Enter";
     }
 
+    /**
+     *
+     * @return
+     */
     // epilog
     public String getEpilogue() {
         clearScreen();
@@ -82,6 +113,11 @@ public class GameLogic {
                 "2018 " +
                 "\n\nHit Enter to Exit";
     }
+
+    /**
+     *
+     * @return
+     */
 // static UI remains the same, dynamicUI are actions which change dynamically with location
 
     public String initUI() {
@@ -107,26 +143,44 @@ public class GameLogic {
         return staticUI + dynamicUI;
     }
 
+    /**
+     *
+     */
     public static void clearScreen() {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Action> getActionListOfCurrentLocation() {
         return gameInit.getCurrentLocation().getActionList();
     }
 
+    /**
+     *
+     */
     public void exitGame() {
 //        immediately exits the game
         System.exit(0);
     }
 
+    /**
+     *
+     */
     private void exitGameWithGoodBye() {
         clearScreen();
         System.out.println("Good bye!");
         System.exit(0);
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     //    checks if the input can be parsed into string
 //    returns true if possible otherwise returns false
     private boolean inputTranslator(String input) {
@@ -152,11 +206,19 @@ public class GameLogic {
         return true;
     }
 
+    /**
+     *
+     */
     // method for when player looses
     private void getGameLost() {
         gameLost = true;
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     private Action iterateActionList(String input) {
 //        parse int from String
         int parsedInt = Integer.parseInt(input);
@@ -173,16 +235,26 @@ public class GameLogic {
         return null;
     }
 
+    /**
+     *
+     */
     private void doNothing() {
 //        outputs to invalid input to cli
         System.out.println("Invalid input");
     }
 
+    /**
+     *
+     */
     private void showHint() {
 //        outputs the hint to cli
         System.out.println(gameInit.getHintOfCurrentLocation());
     }
 
+    /**
+     *
+     * @param action
+     */
     private void changeLocation(Action action) {
         LinkedList<Location> locationList = gameInit.getCurrentLocation().getExits();
 /*
@@ -201,42 +273,67 @@ afterwards it changes stats as well
         }
     }
 
+    /**
+     *
+     * @return
+     */
     //    checks players hp returns true if < 0
     private boolean checkPlayersHP() {
         return player.getHP() <= 0;
     }
 
+    /**
+     *
+     * @return
+     */
     //    checks players fuel returns true if < 0
     private boolean checkPlayersFuel() {
         return player.getFuel() <= 0;
     }
 
-    /*
-    returns true if game over
-    checks players hp and fuel value,
-    if either under 0 returns false
-    */
+    /**
+     *     checks players hp and fuel value,
+     *     if either under 0 returns false
+     * @return true if game is over
+     */
     private boolean checkPlayerStats() {
         return checkPlayersHP() || checkPlayersFuel();
     }
 
+    /**
+     *
+     * @return
+     */
     //    returns true if DeathStar is accessible for enter
     private boolean checkDeathStarStats() {
         return deathStar.getHP() <= 15;
     }
 
+    /**
+     *
+     * @return
+     */
     // checks if tieFigters are destroyed and death star has the limit needed
-    private void deathStarAccessable() {
+    private boolean deathStarAccessable() {
         if (checkDeathStarStats() && checkTieFightersStats()) {
             deathStar.isReady();
+            return true;
         }
+        return false;
     }
 
+    /**
+     *
+     * @return
+     */
     //    returns true if tie fighters are destroyed
     private boolean checkTieFightersStats() {
         return tieFighters.getHP() <= 0;
     }
 
+    /**
+     *
+     */
     private void checkGameStatus() {
         if (checkPlayerStats()) {
             getGameLost();
@@ -247,13 +344,30 @@ afterwards it changes stats as well
         }
     }
 
+    /**
+     *
+     * @param action
+     */
     //    alters players HP and Fuel based on Action
     private void changeStats(Action action) {
 //        gets values from the passed action
+        boolean quickCheck = gameInit.getCurrentLocation().getName().equals("Near Asteroid Belt");
+        boolean checkHP = player.getHP() < 15 || player.getFuel() < 15;
+
+        if( quickCheck && checkHP){
         player.changeHP(action.getHpVal());
-        player.changeFuel(action.getFuelVal());
+        player.changeFuel(action.getFuelVal());}
+        else if(!quickCheck){
+            player.changeHP(action.getHpVal());
+            player.changeFuel(action.getFuelVal());
+        }
+
     }
 
+    /**
+     *
+     * @param action
+     */
     //    add init player
     private void reactionProcess(Action action) {
         switch (action.getReaction()) {
@@ -284,15 +398,28 @@ afterwards it changes stats as well
         }
     }
 
+    /**
+     *
+     * @param action
+     */
     private void attackTheDeathStar(Action action) {
-//        counter for deathstar attack
-//        each attack lowers the deathStar HP less
-        if (checkDeathStarStats()) {
+//           checks status if the deathstar is accessable changes the location if it is
+//    if not checks if tifigters are destroyed and if not only reduced by 2
+        if (deathStarAccessable()) {
             changeLocation(action);
+        } else if (!checkTieFightersStats()){
+            deathStar.setHP(deathStar.getHP()-2);
+            changeStats(action);
+            return;
         }
         deathStar.setHP(deathStar.getHP() - 5);
+        changeStats(action);
     }
 
+    /**
+     *
+     * @param action
+     */
     //    destroys tiefighters
     private void destroyTieFighters(Action action) {
         tieFighters.setDestroyed();
@@ -315,6 +442,10 @@ afterwards it changes stats as well
         }
     }
 
+    /**
+     *
+     * @param action
+     */
 // according to the action millenium falcon, or x-wing is selected as a ship and location is changed
 
     private void initNewPlayer(Action action) {
@@ -329,6 +460,9 @@ afterwards it changes stats as well
         changeLocation(action);
     }
 
+    /**
+     *
+     */
     private void handleLostGame() {
         if (checkPlayersHP()) {
             clearScreen();
@@ -352,6 +486,10 @@ afterwards it changes stats as well
         exitGame();
     }
 
+    /**
+     *
+     * @param input
+     */
     // checks if player HP and Fuel > 0
 //    checks if gameIs
     private void magicHappening(String input) {
