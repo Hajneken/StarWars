@@ -199,7 +199,11 @@ public class GameLogic {
             } else if (formattedInput.equals("E")) {
                 exitGameWithGoodBye();
             } else if (input.isEmpty() || !input.isEmpty()) {
+                clearScreen();
                 doNothing();
+                System.out.print("\n\nContinue by pressing ENTER");
+                Scanner sc = new Scanner(System.in);
+                sc.nextLine();
                 return false;
             }
         }
@@ -207,17 +211,19 @@ public class GameLogic {
     }
 
     /**
-     *
+     * part of logic where player looses
+     * changes the boolean gameLost to true
      */
-    // method for when player looses
     private void getGameLost() {
         gameLost = true;
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * parses integer from String and then iterates
+     * over a list of actions comparing each numOfAction with parsed int
+     * @param input from which integer is parsed
+     * @return action which is equal to the parsedInt
+     * otherwise returns null if there is no match
      */
     private Action iterateActionList(String input) {
 //        parse int from String
@@ -236,19 +242,10 @@ public class GameLogic {
     }
 
     /**
-     *
+     * Simply prints out to the cli invalid input
      */
     private void doNothing() {
-//        outputs to invalid input to cli
         System.out.println("Invalid input");
-    }
-
-    /**
-     *
-     */
-    private void showHint() {
-//        outputs the hint to cli
-        System.out.println(gameInit.getHintOfCurrentLocation());
     }
 
     /**
@@ -332,7 +329,9 @@ afterwards it changes stats as well
     }
 
     /**
-     *
+     * Checks if players HP or Fuel are not below 0
+     * Casuses the end of game if true
+     * If not, checks if Tie Fighters are destroyed
      */
     private void checkGameStatus() {
         if (checkPlayerStats()) {
@@ -345,10 +344,9 @@ afterwards it changes stats as well
     }
 
     /**
-     *
+     *  alters players HP and Fuel based on Action
      * @param action
      */
-    //    alters players HP and Fuel based on Action
     private void changeStats(Action action) {
 //        gets values from the passed action
         boolean quickCheck = gameInit.getCurrentLocation().getName().equals("Near Asteroid Belt");
@@ -366,7 +364,8 @@ afterwards it changes stats as well
 
     /**
      *
-     * @param action
+     * @param action passed from the iterateActionListMethod
+     *               divides into cases based on the reaction
      */
     //    add init player
     private void reactionProcess(Action action) {
@@ -487,11 +486,10 @@ afterwards it changes stats as well
     }
 
     /**
-     *
+     * checks player HP and Fuel
+     * checks if gameIs
      * @param input
      */
-    // checks if player HP and Fuel > 0
-//    checks if gameIs
     private void magicHappening(String input) {
 
         //passes argument to find out if the input is valid
