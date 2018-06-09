@@ -12,6 +12,9 @@ import java.util.*;
 /**
  * @author Hynek Zemanec
  * @project StarWars
+ *
+ * VERSION CHECK - DOMOV
+ *
  */
 public class GameLogic {
     private GameInit gameInit;
@@ -72,6 +75,7 @@ public class GameLogic {
 // static UI remains the same, dynamicUI are actions which change dynamically with location
 
     public String initUI() {
+        clearScreen();
         String staticUI =
                 "***********************************************************" +
                         "********************************************************\n" +
@@ -99,6 +103,8 @@ public class GameLogic {
         return gameInit.getCurrentLocation().getActionList();
     }
 
+//    checks if the input can be parsed into string
+//    returns true if possible otherwise returns false
     private boolean inputTranslator(String input) {
         try {
             int parsed = Integer.parseInt(input);
@@ -211,6 +217,7 @@ afterwards it changes stats as well
         player.changeFuel(action.getFuelVal());
     }
 
+//    add init player
     private void reactionProcess(Action action) {
         switch (action.getReaction()) {
             case 1:
@@ -225,10 +232,25 @@ afterwards it changes stats as well
             case 4:
                 this.getGameWin();
                 break;
+            case 5:
+                this.initNewPlayer(action);
+                break;
             default:
                 doNothing();
                 break;
         }
+    }
+
+// according to the action millenium falcon, or x-wing is selected as a ship and location is changed
+
+    private void initNewPlayer(Action action){
+        switch (action.getNumOfCase()){
+            case 1:this.player = new Player("player1", "Millenium Falcon", 10,10 );
+            break;
+            case 2:this.player = new Player("player1", "X-Wing", 5, 10);
+            break;
+        }
+        changeLocation(action);
     }
 
     public static void clearScreen() {
@@ -258,12 +280,8 @@ afterwards it changes stats as well
     }
 
 // checks if player HP and Fuel > 0
+//    checks if gameIs
     private void magicHappening(String input) {
-        checkGameStatus();
-
-        if(gameLost){
-            handleLostGame();
-        }
 
         //passes argument to find out if the input is valid
         if (inputTranslator(input) && iterateActionList(input) != null) {
@@ -271,6 +289,8 @@ afterwards it changes stats as well
         } else {
             System.out.println("Invalid Input");
         }
+        if(gameLost) { handleLostGame(); }
+        checkGameStatus();
     }
 
     public String processInput(String input) {

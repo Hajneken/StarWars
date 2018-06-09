@@ -46,7 +46,7 @@ public class GameInit {
                 "You might not be able to do destroy tie-fighters in this location.");
         Location nearAsteroidBelt = new Location("Near Asteroid Belt",
                 "Haven of the Rebels Fleet providing support for the ongoing battle.",
-                "\n Choose your next action by entering the corresponding number:\n   " +
+                "\n Choose your next action by entering the corresponding number:\n" +
                         "   1.Fly within the Belt of explosive Asteroids in hope of getting rid of Tie-Fighters.\n" +
                         "   2.Return to the battle.\n" +
                         "   3.Fight Tie-Fighters\n" +
@@ -95,17 +95,17 @@ public class GameInit {
 
 //      adding actions to base
 
-        base.addAction(new Action(1, "Millenium Falcon", 2, 0,0,1));
-        base.addAction(new Action(2,"X-wing",2, 0,0,1));
+        base.addAction(new Action(1, "Millenium Falcon", 5, 0,0,1));
+        base.addAction(new Action(2,"X-wing",5, 0,0,1));
 //      adding actions to the airport
         airport.addAction(new Action(1, "Jump to the hyperspace and be the first to enter the battlefield",
                 2, -5, -3,1));
         airport.addAction(new Action(2, "Send in the fleet first and then follow them into battle",
-                2, -3, 0,1));
+                2, -3, -3,1));
         airport.addAction(new Action(3, "Enter the battlefield together with the Rebel Fleet",
                 2, -1, -3,1));
         airport.addAction(new Action(4, "Return to choose a different ship",
-                2, 0, 0,2));
+                2, 0, -3,2));
 
         battle.addAction(new Action(1, "Fire at the Death Star shields",
                 1, -4, -2,0));
@@ -115,15 +115,15 @@ public class GameInit {
                 1, -4, -2,2));
         battle.addAction(new Action(4, "Focus the attack at Tie-Fighters",
                 3, -30, -30,0));
-        battle.addAction(new Action(5, "Retreat towards nearby Asteroid Belt",
-                1, 0,-2,1));
+        battle.addAction(new Action(5, "Retreat towards an area nearby Asteroid Belt",
+                2, 0,-2,1));
 
         nearAsteroidBelt.addAction(new Action(1, "Fly within the Belt of explosive Asteroids in hope of getting rid of Tie-Fighters.",
-                1, 0,1,1));
+                2, 0,-2,1));
         nearAsteroidBelt.addAction(new Action(2, "Return to the battle.",
                 1, 0,-2,2));
         nearAsteroidBelt.addAction(new Action(3, "Fight Tie-Fighters",
-                1, -4, 0,0));
+                1, -4, -1,0));
         nearAsteroidBelt.addAction(new Action(4, "Repair your ship and fill-up the tank with fuel",
                 1, 5, 10,0));
 
@@ -134,8 +134,7 @@ public class GameInit {
         asteroidBelt.addAction(new Action(3, "Manoeuvre the ship as best as you can",
                 1, -1,-4, 0));
         asteroidBelt.addAction(new Action(4, "Leave the Asteroid Belt",
-                1, 0,-1, 1));
-
+                2, 0,-1, 1));
 
         withinDeathStar.addAction(new Action(1, "Fire at the engines",
                 1, -30,-30,0));
@@ -147,7 +146,6 @@ public class GameInit {
                 1, -1, 0,0));
 
     }
-
 
     public Location getCurrentLocation() {return currentLocation;}
 

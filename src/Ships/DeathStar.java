@@ -4,14 +4,15 @@ package Ships;
  * @author Hynek Zemanec
  * @project StarWars
  */
-public class DeathStar implements Enemy{
+public class DeathStar implements Enemy {
     private int hp;
     private boolean ready;
     private boolean destroyed;
+
     /*
     The Deathstar starts with 30 Health Points
      */
-    public DeathStar(){
+    public DeathStar() {
         this.hp = 30;
         this.ready = false;
         this.destroyed = false;
@@ -27,7 +28,7 @@ public class DeathStar implements Enemy{
         hp = newHp;
     }
 
-        public void isReady() {
+    public void isReady() {
         destroyed = true;
     }
 

@@ -1,9 +1,4 @@
 package Logic;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.management.BufferPoolMXBean;
 import  java.util.Scanner;
 
 
@@ -16,6 +11,19 @@ public class UserInterface {
 
     public UserInterface(){
         game = new GameLogic();
+    }
+
+    //    need some pregame logic that would choose the ship and name player first
+
+    public void play(){
+        playIntro();
+        System.out.println(game.initUI());
+//        game starts here
+        while(!game.isOver()){
+            String input = readInput();
+            System.out.println(game.processInput(input));
+        }
+        playEnd();
     }
 
     private void playIntro(){
@@ -31,19 +39,6 @@ public class UserInterface {
         System.out.println(game.getEpilogue());
         readInput();
         game.exitGame();
-    }
-
-//    need some pregame logic that would choose the ship and name player first
-
-    public void play(){
-        playIntro();
-        System.out.println(game.initUI());
-//        game starts here
-        while(!game.isOver()){
-            String input = readInput();
-            System.out.println(game.processInput(input));
-        }
-        playEnd();
     }
 
     private String readInput(){
