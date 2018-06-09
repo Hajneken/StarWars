@@ -1,30 +1,31 @@
-/**
- * @author Hynek Zemanec
- * @project ${PROJECT_NAME}
- */
 package Logic;
 
 import Locations.Location;
+
 import java.util.List;
 
 /**
- *
+ * @author Hynek Zemanec
+ * @version 1.0
+ * @project StarWars
+ * @created July 2018
+ * <p>
+ * Class that initialize the game it self, creating locations, setting their exits, and adding actions to each location.
+ * It remembers current location which is stored in currentLocation variable.
  */
-
 public class GameInit {
 
     private Location currentLocation;
 
     /**
-     *List of Locations
-     *
+     * List of Locations
      */
     public GameInit() {
         initLocations();
     }
 
     /**
-     *
+     * Method that initialize all locations, sets exits to the locations and adds actions to each location.
      */
     private void initLocations() {
         Location base = new Location("Base",
@@ -108,7 +109,7 @@ public class GameInit {
 
         base.addAction(new Action(1, "  1: Millenium Falcon", 5, 0, 0, 1));
         base.addAction(new Action(2, "  2: X-Wing", 5, 0, 0, 1));
-//      adding actions to the airport
+
         airport.addAction(new Action(1, "   1.Jump to the hyperspace and be the first to enter the battlefield",
                 2, -5, -3, 1));
         airport.addAction(new Action(2, "   2.Send in the fleet first and then follow them into battle",
@@ -159,32 +160,36 @@ public class GameInit {
     }
 
     /**
+     * Helper method which returns current location.
      *
-     * @return
+     * @return Location - currentLocation variable
      */
     public Location getCurrentLocation() {
         return currentLocation;
     }
 
     /**
+     * Helper method which returns description of the current location.
      *
-     * @return
+     * @return String - description of current location
      */
     public String getDescriptionOfLocation() {
         return currentLocation.getDescription();
     }
 
     /**
+     * Helper method which returns name of the current location.
      *
-     * @return
+     * @return String - name of current location
      */
     public String getNameOfCurrentLocation() {
         return currentLocation.getName();
     }
 
     /**
+     * Helper method which returns actions of the current location which are then combined with the UI.
      *
-     * @return
+     * @return String - all actions of current location in a single string
      */
     public String getActionsOfCurrentLocation() {
 //        gets all the actions for current location
@@ -195,20 +200,21 @@ public class GameInit {
             actionsOutput += action.getDescription() + "\n";
         }
         return actionsOutput;
-//        return currentLocation.getActions();
     }
 
     /**
+     * Helper method which returns hint of the current location.
      *
-     * @return
+     * @return String - string representation of the hint
      */
     public String getHintOfCurrentLocation() {
         return currentLocation.getHint();
     }
 
     /**
+     * Changes the current location to the one passed in an argument
      *
-     * @param otherLocation
+     * @param otherLocation - Location to which the currentLocation will be set
      */
 
     public void setCurrentLocation(Location otherLocation) {
@@ -216,8 +222,9 @@ public class GameInit {
     }
 
     /**
+     * Removes location from the list of exits, and therefore makes it nonexistent.
      *
-     * @param indexOfLocation
+     * @param indexOfLocation - Integer representation of index of a location in a list
      */
     //    gets the exits and removes those we don't need anymore as well as the action that goes with them
     public void removeLocationFromTheList(int indexOfLocation) {
@@ -226,8 +233,9 @@ public class GameInit {
     }
 
     /**
+     * Removes action from the list of exits, and therefore makes it nonexistent.
      *
-     * @param indexOfAction
+     * @param indexOfAction - Integer representation of index of a action in a list
      */
     public void removeActionFromTheList(int indexOfAction) {
         currentLocation.getActionList().remove(indexOfAction);

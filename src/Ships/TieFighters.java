@@ -3,6 +3,11 @@ package Ships;
 /**
  * @author Hynek Zemanec
  * @project StarWars
+ * @version 1.0
+ * @created July 2018
+ * <p>
+ * Class representing an enemy, Tie Fighters which have to be destroyed before entering the Death Star.
+ * Simple setters and getters are implemented only.
  */
 public class TieFighters implements Enemy {
 
@@ -10,7 +15,7 @@ public class TieFighters implements Enemy {
     private boolean destroyed;
 
     /**
-     *
+     * Constructor initializing TieFighters
      */
     public TieFighters() {
         this.hp = 5;
@@ -18,23 +23,25 @@ public class TieFighters implements Enemy {
     }
 
     /**
+     * Getter of destroyed value
      *
-     * @return
+     * @return boolean - true if destroyed
      */
     public boolean getDestroyed() {
         return destroyed;
     }
 
     /**
-     *
+     * Setter of destroyed value to true
      */
     public void setDestroyed() {
         destroyed = true;
     }
 
     /**
+     *  Getter of HP value of tie fighters
      *
-     * @return
+     * @return Integer - value
      */
     @Override
     public int getHP() {
@@ -45,8 +52,9 @@ public class TieFighters implements Enemy {
     }
 
     /**
+     * Setter of HP value of Tie Fighter
      *
-     * @param newHp
+     * @param newHp - Integer value that sets the new HP
      */
     @Override
     public void setHP(int newHp) {
@@ -54,8 +62,9 @@ public class TieFighters implements Enemy {
     }
 
     /**
+     * Information for that is included in the text User Interface.
      *
-     * @return
+     * @return String - message to be printed in text User Interface
      */
     public String statusInfo() {
         if (destroyed) {

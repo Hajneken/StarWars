@@ -8,7 +8,11 @@ import static org.junit.Assert.*;
 
 /**
  * @author Hynek Zemanec
+ * @version 1.0
  * @project StarWars
+ * @created July 2018
+ * <p>
+ * Testing Class for PlayerTest
  */
 public class PlayerTest {
 

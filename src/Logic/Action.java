@@ -3,6 +3,10 @@ package Logic;
 /**
  * @author Hynek Zemanec
  * @project StarWars
+ * @version 1.0
+ * @created July 2018
+ * <p>
+ * Class representing Action that object which includes identifier, description, reaction, location HP and fuel change
  */
 public class Action {
     private int numOfCase;
@@ -31,30 +35,34 @@ public class Action {
     }
 
     /**
+     * Setter of HP value for the player
      *
-     * @param hpVal
+     * @param hpVal - Integer value
      */
     public void setHpVal(int hpVal) {
         this.hpVal = hpVal;
     }
 
     /**
+     * Setter of Fuel value for the player
      *
-     * @param fuelVal
+     * @param fuelVal - Integer value
      */
     public void setFuelVal(int fuelVal) {
         this.fuelVal = fuelVal;
     }
 
     /**
+     * Getter of the location
      *
-     * @return
+     * @return - Integer value of the location
      */
     public int getLocation() {
         return location;
     }
 
     /**
+     * Setter of the location which to which it should be changed
      *
      * @param location
      */
@@ -63,22 +71,25 @@ public class Action {
     }
 
     /**
+     * Getter of number of case
      *
-     * @return
+     * @return integer - identifier of the particular action
      */
     public int getNumOfCase() {
         return numOfCase;
     }
 
     /**
+     * Setter of number of case
      *
-     * @param numOfCase
+     * @param numOfCase integer - identifier of the particular action
      */
     public void setNumOfCase(int numOfCase) {
         this.numOfCase = numOfCase;
     }
 
     /**
+     * Getter of number of case
      *
      * @return
      */
@@ -87,40 +98,45 @@ public class Action {
     }
 
     /**
+     * Setter of the description Value
      *
-     * @param description
+     * @param description String
      */
     public void setDescription(String description) {
         this.description = description;
     }
 
     /**
+     * Getter of reaction value
      *
-     * @return
+     * @return Integer value corresponding to the reaction of the action
      */
     public int getReaction() {
         return reaction;
     }
 
     /**
+     * Setter of reaction value
      *
-     * @param reaction
+     * @param reaction Integer value corresponding to the reaction of the action
      */
     public void setReaction(int reaction) {
         this.reaction = reaction;
     }
 
     /**
+     * Getter of HP value of the player
      *
-     * @return
+     * @return Integer value of HP
      */
     public int getHpVal() {
         return hpVal;
     }
 
     /**
+     * Getter of HP value of the player
      *
-     * @return
+     * @return Integer value of Fuel
      */
     public int getFuelVal() {
         return fuelVal;

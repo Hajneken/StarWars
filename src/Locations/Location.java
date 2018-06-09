@@ -6,7 +6,11 @@ import java.util.*;
 
 /**
  * @author Hynek Zemanec
+ * @version 1.0
  * @project StarWars
+ * @created July 2018
+ * <p>
+ * Class representing each location, having name, description, list of actions, list of exits and hint.
  */
 
 public class Location {
@@ -19,15 +23,11 @@ public class Location {
     private List<Location> exits;
 
     /**
-     *
      * @param name
      * @param description
      * @param actions
      * @param hint
      */
-    //    constructor
-//    each Location has name and description
-//    it has a collection of exits which
     public Location(String name, String description, String actions, String hint) {
         this.name = name;
         this.description = description;
@@ -38,8 +38,9 @@ public class Location {
     }
 
     /**
+     * Setter of the location's exits
      *
-     * @param nextLocation
+     * @param nextLocation - Location which is set as a possible exit
      */
     //  Adds exit to a location
     public void setExit(Location nextLocation) {
@@ -47,43 +48,41 @@ public class Location {
     }
 
     /**
+     * Adds action to a location
      *
-     * @param action
+     * @param action Action - to be added in the list
      */
-    //  Adds action to a location
     public void addAction(Action action) {
         actionList.add(action);
     }
 
     /**
+     * Getter of list of actions
      *
-     * @return
+     * @return List - list of actions of a location
      */
     public List<Action> getActionList() {
         return actionList;
     }
 
     /**
+     * Getter of list of locations
      *
-     * @return
+     * @return LinkedList - List of exits to each location
      */
-    // Location getter
     public LinkedList<Location> getExits() {
         return (LinkedList<Location>) exits;
     }
 
     /**
-     *
-     * @return
+     * @return String - name of location
      */
-    // getter of name
     public String getName() {
         return name;
     }
 
     /**
-     *
-     * @param name
+     * @param name String - name of location to be set
      */
     // setter of name
     public void setName(String name) {
@@ -91,17 +90,18 @@ public class Location {
     }
 
     /**
+     * Getter of description
      *
-     * @return
+     * @return String - description of the location
      */
-    // getter of description
     public String getDescription() {
         return description;
     }
 
     /**
+     * Setter of description
      *
-     * @param description
+     * @param description String - description to be set
      */
     // setter of description
     public void setDescription(String description) {
@@ -109,27 +109,26 @@ public class Location {
     }
 
     /**
+     * Getter of actions in String
      *
-     * @return
+     * @return String - representation of actions attatched to the object rather than list
      */
-    // getter of actions
     public String getActions() {
         return actions;
     }
 
     /**
+     * Setter of actions
      *
-     * @param actions
+     * @param actions - action to be set
      */
-    // setter of actions
     public void setActions(String actions) {
         this.actions = actions;
     }
 
     /**
-     *
-     * @param o
-     * @return
+     * @param o - object to be compared with
+     * @return boolean - true if object equals to something
      */
     @Override
     public boolean equals(Object o) {
@@ -145,8 +144,9 @@ public class Location {
     }
 
     /**
+     * method returning int hashCode of an instance of certain object
      *
-     * @return
+     * @return Integer - representation of the object
      */
     @Override
     public int hashCode() {
@@ -154,8 +154,9 @@ public class Location {
     }
 
     /**
+     * Getter of a hint
      *
-     * @return
+     * @return String - representation of a hint of an object
      */
     public String getHint() {
         return hint;
