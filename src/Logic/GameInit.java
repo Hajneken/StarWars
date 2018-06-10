@@ -8,7 +8,7 @@ import java.util.List;
  * @author Hynek Zemanec
  * @version 1.0
  * @project StarWars
- * @created July 2018
+ * @created June 2018
  * <p>
  * Class that initialize the game it self, creating locations, setting their exits, and adding actions to each location.
  * It remembers current location which is stored in currentLocation variable.
@@ -192,7 +192,6 @@ public class GameInit {
      * @return String - all actions of current location in a single string
      */
     public String getActionsOfCurrentLocation() {
-//        gets all the actions for current location
         List<Action> actions = currentLocation.getActionList();
         String actionsOutput = "\n";
         for (Action action :

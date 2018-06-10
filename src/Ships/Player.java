@@ -4,7 +4,7 @@ package Ships;
  * @author Hynek Zemanec
  * @project StarWars
  * @version 1.0
- * @created July 2018
+ * @created June 2018
  * <p>
  * Class representing the main hero (the player) of the game.
  * Provides setters and getters for the values of hero.

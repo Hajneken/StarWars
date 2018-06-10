@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Hynek Zemanec
  * @project StarWars
  * @version 1.0
- * @created July 2018
+ * @created June 2018
  * <p>
  * Class representing the user interface displayed in the cli.
  * The class divides the game into 3 sections. The intro part, main game and end of the game.

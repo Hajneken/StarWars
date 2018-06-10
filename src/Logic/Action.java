@@ -4,7 +4,7 @@ package Logic;
  * @author Hynek Zemanec
  * @project StarWars
  * @version 1.0
- * @created July 2018
+ * @created June 2018
  * <p>
  * Class representing Action that object which includes identifier, description, reaction, location HP and fuel change
  */

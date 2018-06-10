@@ -4,9 +4,10 @@ package Logic;
  * @author Hynek Zemanec
  * @project StarWars
  * @version 1.0
- * @created July 2018
+ * @created June 2018
  * <p>
- * Main Class having main method where it all begins.
+ * Main Class having main method.
+ * It all begins here.
  *
  */
 

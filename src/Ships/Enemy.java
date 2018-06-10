@@ -4,7 +4,7 @@ package Ships;
  * @author Hynek Zemanec
  * @version 1.0
  * @project StarWars
- * @created July 2018
+ * @created June 2018
  * <p>
  * Interface for all enemies.
  */

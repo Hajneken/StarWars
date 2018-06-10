@@ -4,7 +4,7 @@ package Ships;
  * @author Hynek Zemanec
  * @project StarWars
  * @version 1.0
- * @created July 2018
+ * @created June 2018
  * <p>
  * Class representing an enemy, Tie Fighters which have to be destroyed before entering the Death Star.
  * Simple setters and getters are implemented only.

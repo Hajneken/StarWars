@@ -8,7 +8,7 @@ import java.util.*;
  * @author Hynek Zemanec
  * @version 1.0
  * @project StarWars
- * @created July 2018
+ * @created June 2018
  * <p>
  * Class representing each location, having name, description, list of actions, list of exits and hint.
  */

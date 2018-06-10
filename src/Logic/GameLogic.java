@@ -4,14 +4,15 @@ import Locations.Location;
 import Ships.DeathStar;
 import Ships.Player;
 import Ships.TieFighters;
+
 import java.util.*;
 
 
 /**
  * @author Hynek Zemanec
- * @project StarWars
  * @version 1.0
- * @created July 2018
+ * @project StarWars
+ * @created June 2018
  * <p>
  * The logic of the game where input from the user is being processed.
  * Additionally, user text interface template, messages are included to be returned
@@ -313,7 +314,6 @@ public class GameLogic {
     /**
      * Sets deatStar property ready to true, enabling the Death Star for access if condition is true
      *
-     *
      * @return boolean - true checkDeathStarStats and checkTieFightersStats are true
      */
     private boolean deathStarAccessable() {
@@ -338,7 +338,6 @@ public class GameLogic {
      * Casuses the end of game if true
      * If not, checks if Tie Fighters are destroyed
      * Sets property of tie fighters destroyed to true
-     *
      */
     private void checkGameStatus() {
         if (checkPlayerStats()) {
@@ -352,7 +351,7 @@ public class GameLogic {
 
     /**
      * Alters players HP and Fuel based on Action
-     *
+     * <p>
      * quickCheck and checkHp ensure that player cannot infinitely tank fuel and get HP
      * checks if the location is Near Asteroid Belt and checks players stats
      *
@@ -428,7 +427,7 @@ public class GameLogic {
     /**
      * Set property of tieFighters destroyed to true and
      * removes location of Asteroid Belt as well as actions corresponding to it that no longer make sense anymore.
-     *
+     * <p>
      * Also resets positions of individual actions in the list.
      *
      * @param action - Action passed by the user
@@ -467,9 +466,9 @@ public class GameLogic {
     /**
      * Prints different messages depending on what happened
      * Possibilities - HP <= 0 ; Fuel <= 0, Action that led immediately to the demise
-     *
+     * <p>
      * Makes some space first for better UX before printing the message
-     *
+     * <p>
      * Invokes method that ends the game.
      */
     private void handleLostGame() {
@@ -499,7 +498,7 @@ public class GameLogic {
      * The most highest node in the tree of methods
      * checks if the input is valid and not null
      * then passes it to compare it with each action in the list of actions of current location
-     *
+     * <p>
      * Checks the game status so the text user interface won't display misleading values
      *
      * @param input is String given by the user
