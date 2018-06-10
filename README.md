@@ -5,8 +5,11 @@ A cli text adventure game written in Java, inspired by Star Wars
 ## About
 
 This fun little project was inspired by my favourite movie of all time, **Star Wars**. 
-
 It is also a semestral project for the Java class (4IT101) at the Prague School of Economics in 2018. 
+
+The goal of the game is to destroy the Death Star and restore peace across the galaxy.
+
+Are you the one to bring balance to the force?
 
 ## Get started
 
