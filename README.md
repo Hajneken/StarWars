@@ -1,10 +1,10 @@
 # Star Wars: The Last Battle 
 
-A cli text adventure game written in Java, inspired by Star Wars 
+A cli text adventure game written in Java, inspired by Star Wars ✨
 
 ## About
 
-This fun little project was inspired by my favourite movie of all time, **Star Wars**. 
+This fun little project was inspired by my favourite movie of all time, **Star Wars** ❤. 
 It is also a semestral project for the Java class (4IT101) at the Prague School of Economics in 2018. 
 
 The goal of the game is to destroy the Death Star and restore peace across the galaxy.
@@ -20,7 +20,7 @@ Are you the one to bring balance to the force?
 1. Run command ``java -jar StarWars.jar``
 1. Enjoy the game and may the force be with you, always!
 
-## How to play
+## How to play 
 
 The game starts with a greeting message and intro.
 
@@ -50,7 +50,7 @@ Follow this series of actions respectively. That should guarantee you the fastes
 ``1`` ``3`` ``5`` ``4`` ``1`` ``2`` ``4`` ``2`` ``3`` ``3`` ``3`` ``5`` ``4`` ``2`` ``3`` ``3``
 
 
-## Disclaimer
+## ❗ Disclaimer
 
 I do not own any rights to the Star Wars brand.
 
